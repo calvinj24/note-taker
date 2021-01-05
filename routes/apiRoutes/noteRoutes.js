@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { findById, createNewNote } = require('../../lib/notes')
+const { findById, createNewNote, deleteNote } = require('../../lib/notes')
 const { notes } = require("../../db");
 const uniqid = require('uniqid');
 
@@ -11,7 +11,6 @@ router.get("/notes", (req, res) => {
 
 // get notes by id
 router.get("/notes/:id", (req, res) => {
-  console.log(req.params.id);
   const result = findById(req.params.id, notes);
   if (result) {
     res.json(result);
@@ -23,9 +22,14 @@ router.get("/notes/:id", (req, res) => {
 // add new note
 router.post('/notes', (req, res) => {
   req.body.id = uniqid();
-  //console.log(req.body);
   const note = createNewNote (req.body, notes);
   res.json(note);
+});
+
+// delete note
+router.delete('/notes/:id', (req, res) => {
+  deleteNote(req.params.id, notes);
+  res.json(notes);
 });
 
 module.exports  = router;

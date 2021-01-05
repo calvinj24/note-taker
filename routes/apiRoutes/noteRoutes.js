@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { findById, createNewNote, deleteNote } = require('../../lib/notes')
 const { notes } = require("../../db");
 const uniqid = require('uniqid');
+const { cpuUsage } = require("process");
 
 // get all notes
 router.get("/notes", (req, res) => {
@@ -21,6 +22,7 @@ router.get("/notes/:id", (req, res) => {
 
 // add new note
 router.post('/notes', (req, res) => {
+  console.log(req.body);
   req.body.id = uniqid();
   const note = createNewNote (req.body, notes);
   res.json(note);

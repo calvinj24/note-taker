@@ -11,15 +11,32 @@ This application is a note taker designed to write and save notes.  This app is 
 * In the right-hand notes column, a delete button for each note allows the user to permanently delete a note.
 * A user can click the write icon in the nav bar to write a new note. Once a user enters a note title and text, a save icon appears on the nav bar to save the note.
 
+<br/>
+
 ## Built With
 * Express
 * Uniqid
 * FS
 * Diployed to Heroku
 
+<br/>
+
 ## Link to Note Taker Website
 https://cryptic-basin-95380.herokuapp.com/
 
+<br/>
+
 ## How the site looks
 
+### Landing Page
+<img src='./assets/landingpage.png'>
+
+### Note Page
+<img src='./assets/notepage.png'>
+
+<br/>
+
 ## Contact Info
+* Cal Johnson
+* GitHub: https://github.com/calvinj24
+* Email: cal.johnson724@gmail.com
